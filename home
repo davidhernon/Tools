@@ -1,0 +1,8 @@
+#!/bin/bash
+# Goes to the directory for a project based on string
+# usage $: dkill process_name
+
+if [ "$1" == "ecstatic" ]
+then 
+	cd "/Users/davidhernon/Coding/Ecstatic/EcstaticEB/squad_app"
+fi

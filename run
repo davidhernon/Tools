@@ -1,0 +1,10 @@
+#!/bin/bash
+# Runs procceses matching a string name
+# usage $: run process_name
+
+PROCESS_TO_RUN=$1
+
+dkill $1
+sleep 10
+$1 index.js
+echo 'Hello'
