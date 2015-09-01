@@ -1,0 +1,15 @@
+#!/bin/bash
+# Kills procceses matching a string name
+# usage $: dkill process_name
+
+PROCESS_TO_CHECK=$1
+
+LINE_NUM="$(ps aux | grep -ie $1 | grep -v 'alive' | grep -v 'grep' | wc -l)"
+if [ "$LINE_NUM" == "0" ]
+then
+	echo "No Running Process matched $1"
+else
+	echo "$LINE_NUM Running Processes"
+fi
+
+ps aux | grep -ie $1 | grep -v 'alive' | grep -v 'grep'
