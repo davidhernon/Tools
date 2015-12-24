@@ -1,0 +1,25 @@
+#!/bin/bash
+# Easier git management
+
+# Usage: 'dgit (required)your_commit_message (optional)name_of_git_remote (optional)name_of_branch'
+# if only one command argument is given, remote=origin and branch=master
+
+MESSAGE=$1
+REMOTE='origin'
+BRANCH='master'
+
+if (( $# == 2 )); then
+	REMOTE=$2
+fi
+
+if (( $# == 3 )); then
+	REMOTE=$2
+	BRANCH=$3
+fi
+
+if (( $# > 3 )); then
+	echo "Invalid number of arguments"
+	exit
+fi
+
+git add --all; git commit -m $MESSAGE; git push $REMOTE $BRANCH
